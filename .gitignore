@@ -1,0 +1,7 @@
+*.class
+
+#archivos de IntelliJ
+.idea
+*.iml
+out/
+*.fxml
