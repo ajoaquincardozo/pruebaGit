@@ -5,28 +5,31 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
 import javafx.stage.Stage;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 
-public class Main extends Application {
+import java.io.File;
 
-    GraphicsContext gc;
+public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Estoy probando que onda esto");
         Group canvasContainer = new Group();
         Canvas canvas= new Canvas(460,200);
-        gc = canvas.getGraphicsContext2D();
         canvasContainer.getChildren().add(canvas);
 
-        Button botonNothing = new Button();
-        botonNothing.setText("Clickeame pero no haga nada");
+        Button botonMusica = new Button();
+        botonMusica.setText("Musica");
+        String musicFile = "sonidos/Inuyashiki_OP.wav";
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MusicEventHandler botonMusicaHandler = new MusicEventHandler(sound);
+        botonMusica.setOnAction(botonMusicaHandler);
 
-        HBox contenedorHorizontal = new HBox(botonNothing);
+        HBox contenedorHorizontal = new HBox(botonMusica);
         VBox contenedorPrincipal = new VBox(contenedorHorizontal,canvasContainer);
 
         contenedorPrincipal.setSpacing(10);
