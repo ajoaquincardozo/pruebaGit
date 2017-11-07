@@ -1,4 +1,5 @@
-package sample;
+package controladores;
 
 public class Controller {
+
 }

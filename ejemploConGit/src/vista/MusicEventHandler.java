@@ -1,4 +1,4 @@
-package sample;
+package vista;
 
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.Media;
