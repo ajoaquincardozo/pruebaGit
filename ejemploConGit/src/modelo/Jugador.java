@@ -14,6 +14,18 @@ public class Jugador {
 		this.propiedades = new ArrayList<Propiedad>();
 		this.nombre = nombreJugador;
 	}
+
+	public Casillero casilleroActual() {
+		return this.posicion;
+	}
+
+	public void cambiarCasillero(Casillero otroCasillero) {
+		this.posicion.desocuparCasillero(this.nombre);
+		this.posicion = otroCasillero;
+		otroCasillero.jugadorCayo(this.nombre);
+	}
+
+
 	public void finalizarTurno() {
 		
 	}
@@ -35,5 +47,6 @@ public class Jugador {
 	public void recibirDinero(long dineroaSumar){
 		this.dinero += dineroaSumar;
 	}
+
 
 }

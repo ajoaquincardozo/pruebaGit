@@ -1,8 +1,19 @@
 package modelo;
 
-public interface Casillero {
-	
-	public void jugadorCayo(Jugador jugador);
+import java.util.Hashtable;
 
-	public void desocuparCasillero(String nombre);
+public abstract class Casillero {
+	public Hashtable<String,String> personasAdentro;
+
+	public Casillero(){
+		personasAdentro = new Hashtable<String, String>();
+	}
+
+	public void jugadorCayo(String nombreJugador) {
+		this.personasAdentro.put(nombreJugador, "-");
+	}
+
+	public void desocuparCasillero(String nombre){
+		this.personasAdentro.remove(nombre);
+	}
 }

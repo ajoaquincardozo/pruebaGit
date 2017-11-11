@@ -2,12 +2,13 @@ package modelo;
 
 import java.util.Hashtable;
 
-public class Quini6 implements Evento{
+public class Quini6 extends Evento{
 
     private Hashtable<String,Integer> historialDePaso;
     private static long premiosPorCaida[] = { 50000, 30000 };
 
     public Quini6(){
+        super();
         historialDePaso = new Hashtable<String, Integer>();
     }
 
@@ -21,7 +22,7 @@ public class Quini6 implements Evento{
     public void desocuparCasillero(String nombre) {
     }
 
-    public void jugadorCayo(Jugador jugador) {
+    public void aplicarEfecto(Jugador jugador) {
         int numCaida;
         if (! historialDePaso.containsKey(jugador.nombre()) ){
             historialDePaso.put(jugador.nombre(), 0);

@@ -1,6 +1,6 @@
 package modelo;
 
-public class Propiedad implements Casillero { 
+public class Propiedad extends Casillero {
 	private  String nombreDuenio;
 	
 	public Propiedad(){

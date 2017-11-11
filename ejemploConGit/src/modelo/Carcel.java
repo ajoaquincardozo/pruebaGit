@@ -1,6 +1,18 @@
 package modelo;
 
-public class Carcel implements Evento{
+import java.util.Hashtable;
+
+public class Carcel extends Evento {
+	private Hashtable<String,Integer> encarcelados;
+
+	public Carcel(){
+		encarcelados = new Hashtable<String, Integer>();
+	}
+
+	@Override
+	public void aplicarEfecto(Jugador jugador) {
+		System.out.println("Me falta implementacion");
+	}
 
 	public void jugadorCayo(Jugador jugador) {
 		// TODO Auto-generated method stub

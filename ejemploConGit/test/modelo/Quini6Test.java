@@ -9,7 +9,8 @@ public class Quini6Test {
         Casillero quini6 = new Quini6();
         Jugador jugador = new Jugador(dineroInicial, quini6,"Pablo");
         for (int i = 0; i < cantCaidas ; i++) {
-            quini6.jugadorCayo(jugador);
+            Quini6 quini = (Quini6) quini6;
+            quini.jugadorCayo(jugador);
         }
         return jugador;
     }
