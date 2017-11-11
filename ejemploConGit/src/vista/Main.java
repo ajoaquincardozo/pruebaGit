@@ -24,7 +24,7 @@ public class Main extends Application {
 
         Button botonMusica = new Button();
         botonMusica.setText("Musica");
-        String musicFile = "sonidos/Inuyashiki_OP.wav";
+        String musicFile = "/home/j/pruebaGit/ejemploConGit/sonidos/Inuyashiki_OP.wav";
         Media sound = new Media(new File(musicFile).toURI().toString());
         MusicEventHandler botonMusicaHandler = new MusicEventHandler(sound);
         botonMusica.setOnAction(botonMusicaHandler);
