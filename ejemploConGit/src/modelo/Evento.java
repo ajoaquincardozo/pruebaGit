@@ -3,7 +3,7 @@ package modelo;
 public abstract class Evento extends Casillero {
 
 	public Evento(){
-		super();
+		super("Evento");
 	}
 
 	public abstract void aplicarEfecto(Jugador jugador);

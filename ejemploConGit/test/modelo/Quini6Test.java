@@ -34,5 +34,4 @@ public class Quini6Test {
         Assert.assertEquals(80000, jugadorCon3Caidas.dinero());
         Assert.assertEquals(100000, jugadorCon80Caidas.dinero());
     }
-
 }

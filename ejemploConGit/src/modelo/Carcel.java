@@ -1,3 +1,4 @@
+
 package modelo;
 
 import java.util.Hashtable;
@@ -6,22 +7,35 @@ public class Carcel extends Evento {
 	private Hashtable<String,Integer> encarcelados;
 
 	public Carcel(){
-		encarcelados = new Hashtable<String, Integer>();
+		encarcelados = new Hashtable<>();
+	}
+
+
+	public void liberar(String nombre){
+		this.encarcelados.remove(nombre);
 	}
 
 	@Override
 	public void aplicarEfecto(Jugador jugador) {
-		System.out.println("Me falta implementacion");
+		int numTurnosEnlaCarcel;
+		if (! encarcelados.containsKey(jugador.nombre()) ){
+			numTurnosEnlaCarcel = 0;
+			encarcelados.put(jugador.nombre(), numTurnosEnlaCarcel);
+		} else {
+			Integer valor = encarcelados.get(jugador.nombre());
+			numTurnosEnlaCarcel = valor;
+		}
+
+		if (numTurnosEnlaCarcel == 3){
+			liberar(jugador.nombre());
+		} else {
+			encarcelados.put(jugador.nombre(),numTurnosEnlaCarcel+1);
+		}
 	}
 
-	public void jugadorCayo(Jugador jugador) {
-		// TODO Auto-generated method stub
-		System.out.println("hola");
-	}
-
-	@Override
-	public void desocuparCasillero(String nombre) {
-
+	public boolean puedeSalir(Jugador jugador) {
+		return this.encarcelados.get(jugador.nombre()) == 1;
 	}
 
 }
+

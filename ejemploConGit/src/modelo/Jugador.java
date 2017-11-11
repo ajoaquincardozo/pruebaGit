@@ -19,6 +19,16 @@ public class Jugador {
 		return this.posicion;
 	}
 
+
+	public boolean pagarFianza(Carcel carcel){
+		if (carcel.puedeSalir(this)){
+			carcel.liberar(this.nombre);
+			this.dinero -= 45000;
+			return true;
+		}
+		return false;
+	}
+
 	public void cambiarCasillero(Casillero otroCasillero) {
 		this.posicion.desocuparCasillero(this.nombre);
 		this.posicion = otroCasillero;

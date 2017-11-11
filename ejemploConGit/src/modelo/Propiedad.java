@@ -4,7 +4,8 @@ public class Propiedad extends Casillero {
 	private  String nombreDuenio;
 	
 	public Propiedad(){
-		this.nombreDuenio = "";
+		super("Propiedad");
+		this.nombreDuenio = "hola123";
 	}
 	
 	public void jugadorCayo(Jugador jugador) {
