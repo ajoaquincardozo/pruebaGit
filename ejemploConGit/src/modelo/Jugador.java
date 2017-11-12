@@ -21,7 +21,7 @@ public class Jugador {
 
 
 	public boolean pagarFianza(Carcel carcel){
-		if (carcel.puedeSalir(this)){
+		if (carcel.puedeSalir(this.nombre)){
 			carcel.liberar(this.nombre);
 			this.dinero -= 45000;
 			return true;

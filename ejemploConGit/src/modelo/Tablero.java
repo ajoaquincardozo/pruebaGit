@@ -21,7 +21,7 @@ public class Tablero {
 		Casillero casillero = jugador.casilleroActual();
 		if ( casillero.nombre().equals("CARCEL") ){
 			List<String> accionesPosibles = new LinkedList<String>(Arrays.asList("Pasar Turno"));
-			if ( ((Carcel)casillero).puedeSalir(jugador) ){
+			if ( ((Carcel)casillero).puedeSalir(jugador.nombre()) ){
 				accionesPosibles.add(0,"Pagar Fianza");
 			}
 			return accionesPosibles;
