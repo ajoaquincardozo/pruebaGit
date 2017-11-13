@@ -42,6 +42,10 @@ public class Jugador {
 		
 	}
 
+	public void agregarPropiedad(Propiedad propiedad){
+		this.propiedades.add(propiedad);
+	}
+
 	public void tirarDados(Dados dados) {
 		dados.combinacionDeDados();
 	}
