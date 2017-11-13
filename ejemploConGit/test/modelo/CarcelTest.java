@@ -8,7 +8,7 @@ public class CarcelTest {
 
     private Carcel inicializarJugadorEnCarcel(int cantCaidas, long dineroInicial, String nombreJugador  ){
         Casillero carcel = new Carcel("Carcel");
-        Jugador jugador = new Jugador(dineroInicial, carcel,"Pablo");
+        Jugador jugador = new Jugador(dineroInicial, carcel,nombreJugador);
         Carcel carcel1 = (Carcel) carcel;
         for (int i = 0; i < cantCaidas ; i++) {
             carcel1.jugadorCayo(jugador);
@@ -31,7 +31,7 @@ public class CarcelTest {
         Carcel carcel1 = inicializarJugadorEnCarcel(2,0, nombreJugador1);
         Carcel carcel2 = inicializarJugadorEnCarcel(3,0,nombreJugador2);
         Assert.assertTrue(carcel1.puedeSalir(nombreJugador1));
-//        Assert.assertTrue(carcel2.puedeSalir(nombreJugador2));
+        Assert.assertTrue(carcel2.puedeSalir(nombreJugador2));
     }
 
 

@@ -34,14 +34,12 @@ public class Carcel extends Evento {
 			Integer valor = this.encarcelados.get(jugador.nombre());
 			numTurnosEnlaCarcel = valor;
 		}
-
-		if (numTurnosEnlaCarcel == 3){
-//			System.out.println("estoy aca");
+		if (numTurnosEnlaCarcel == 3) {
 			this.liberar(jugador.nombre());
 		}
 	}
 
-	public boolean puedeSalir(String nombre) {
+	public boolean puedeSalir(String nombre){
 		//Hay que hacer una validacion para que no pueda entrar aca, sino existe.
 		return this.encarcelados.get(nombre) >= 1;
 	}
