@@ -8,7 +8,7 @@ public class Quini6 extends Evento{
     private static long premiosPorCaida[] = { 50000, 30000 };
 
     public Quini6(){
-        super();
+        super("Quini6");
         historialDePaso = new Hashtable<String, Integer>();
     }
 

@@ -7,12 +7,14 @@ public class Jugador {
 	private long dinero;
 	private String nombre;
 	private ArrayList<Propiedad> propiedades; //ver esto
-	
+	private int casillerosAMoverse;
+
 	public Jugador(long dineroInicial, Casillero casilleroInicial, String nombreJugador) {
 		this.posicion = casilleroInicial;
 		this.dinero = dineroInicial;
 		this.propiedades = new ArrayList<Propiedad>();
 		this.nombre = nombreJugador;
+		this.casillerosAMoverse = 0;
 	}
 
 	public Casillero casilleroActual() {
@@ -39,9 +41,11 @@ public class Jugador {
 	public void finalizarTurno() {
 		
 	}
-	public void tirarDados() {
-		
+
+	public void tirarDados(Dados dados) {
+		dados.combinacionDeDados();
 	}
+
 	public void edificar() {
 		
 	}
@@ -59,4 +63,15 @@ public class Jugador {
 	}
 
 
+	public int cantidadPropiedades() {
+		return this.propiedades.size();
+	}
+
+	public int cantidadCasillerosAMoverse(){
+		return this.casillerosAMoverse;
+	}
+
+	public void setCasillerosAMoverse(int cantCasilleros) {
+		this.casillerosAMoverse = cantCasilleros;
+	}
 }

@@ -6,7 +6,8 @@ import java.util.Hashtable;
 public class Carcel extends Evento {
 	private Hashtable<String,Integer> encarcelados;
 
-	public Carcel(){
+	public Carcel(String nombreCasillero){
+		super(nombreCasillero);
 		encarcelados = new Hashtable<>();
 	}
 
@@ -21,20 +22,21 @@ public class Carcel extends Evento {
 
 	@Override
 	public void aplicarEfecto(Jugador jugador) {
-		if ( encarcelados.containsKey(jugador.nombre()) ){
-			encarcelados.put(jugador.nombre(),this.encarcelados.get(jugador.nombre()) + 1);
+		if ( this.encarcelados.containsKey(jugador.nombre()) ){
+			this.encarcelados.put(jugador.nombre(),this.encarcelados.get(jugador.nombre()) + 1);
 		}
 
 		int numTurnosEnlaCarcel;
-		if (! encarcelados.containsKey(jugador.nombre()) ){
+		if (! this.encarcelados.containsKey(jugador.nombre()) ){
 			numTurnosEnlaCarcel = 0;
-			encarcelados.put(jugador.nombre(), numTurnosEnlaCarcel);
+			this.encarcelados.put(jugador.nombre(), numTurnosEnlaCarcel);
 		} else {
-			Integer valor = encarcelados.get(jugador.nombre());
+			Integer valor = this.encarcelados.get(jugador.nombre());
 			numTurnosEnlaCarcel = valor;
 		}
 
 		if (numTurnosEnlaCarcel == 3){
+//			System.out.println("estoy aca");
 			this.liberar(jugador.nombre());
 		}
 	}

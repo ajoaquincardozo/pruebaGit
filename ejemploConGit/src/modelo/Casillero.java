@@ -6,9 +6,9 @@ public abstract class Casillero {
 	public Hashtable<String,String> personasAdentro;
 	private String nombre;
 
-	public Casillero(String nombre){
+	public Casillero(String nombreCasillero){
 		personasAdentro = new Hashtable<String, String>();
-		this.nombre = nombre;
+		this.nombre = nombreCasillero;
 	}
 
 	public String nombre(){

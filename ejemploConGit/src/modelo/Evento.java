@@ -2,8 +2,8 @@ package modelo;
 
 public abstract class Evento extends Casillero {
 
-	public Evento(){
-		super("Evento");
+	public Evento(String nombreCasillero){
+		super(nombreCasillero);
 	}
 
 	public abstract void aplicarEfecto(Jugador jugador);
